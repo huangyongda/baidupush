@@ -1,7 +1,6 @@
 {
-    "name": "huangyongda/baidu-push",
+    "name": "huangyongda/baidupush",
     "description":"baidu Push 百度推送",
-    "type": "library",
     "authors": [
         {
             "name": "huangyongda",
@@ -11,7 +10,6 @@
     "require": {
         "php": ">=5.3.0"
     },
-    "minimum-stability":"stable",
     "autoload": {
         "psr-4": {
             "huangyongda\\baiduPush\\": "src"
