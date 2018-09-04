@@ -1,0 +1,20 @@
+{
+    "name": "huangyongda/baidu-push",
+    "description":"baidu Push 百度推送",
+    "type": "library",
+    "authors": [
+        {
+            "name": "huangyongda",
+            "email": "122402509@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability":"stable",
+    "autoload": {
+        "psr-4": {
+            "huangyongda\\baiduPush\\": "src"
+        }
+    }
+}
