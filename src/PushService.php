@@ -1,5 +1,7 @@
 <?php
 namespace huangyongda\baiduPush;
+use \Exception as ErrorException;
+use \Exception as Exception;
 
 
 /**
@@ -339,6 +341,7 @@ class PushService extends BaseSDK {
      * @param array $curlopts
      *        用于cUrl::curl_setopt方法的控制参数.
      * @link http://php.net/manual/zh/function.curl-setopt.php (curl_setopt相关内容)
+     * @throws Exception
      */
     function __construct($apiKey = null, $secretKey = null, $curlopts = array()) {
 

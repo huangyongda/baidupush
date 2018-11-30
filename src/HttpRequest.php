@@ -1,5 +1,6 @@
 <?php
 namespace huangyongda\baiduPush;
+use \Exception as Exception;
 
 class HttpRequest {
     const HTTP_GET = 'GET';
@@ -233,9 +234,10 @@ class HttpRequest {
             throw new Exception( "curl_error($errMsg); with url($url)", $errCode);
         }
     }
+
     /**
      * 快速发起get请求
-     * 
+     *
      * @param string $path
      *        请求资源路径
      * @param array $query
@@ -244,7 +246,7 @@ class HttpRequest {
      *        附带header
      * @param array $curlOpts
      *        附加curlOpts
-     *        
+     *
      * @return array http response信息 , 具有如下结构 array(
      *         httpProtocol:'',
      *         status:'',
@@ -252,6 +254,7 @@ class HttpRequest {
      *         header:array(),
      *         content:""
      *         )
+     * @throws Exception
      */
     function get($path, $query = null, $headers = null, $curlOpts = null) {
         $payload = $this -> encodePostBody($query);
@@ -268,6 +271,7 @@ class HttpRequest {
         
         return $this -> request($url, self::HTTP_GET, '', $headers, $curlOpts);
     }
+
     /**
      * 快速发起post请求
      *
@@ -279,7 +283,7 @@ class HttpRequest {
      *        附带header
      * @param array $curlOpts
      *        附加curlOpts
-     *        
+     *
      * @return array http response信息 , 具有如下结构 array(
      *         httpProtocol:'',
      *         status:'',
@@ -287,6 +291,7 @@ class HttpRequest {
      *         header:array(),
      *         content:""
      *         )
+     * @throws Exception
      */
     function post($path = null, $postBody = null, $headers = null, $curlOpts = null) {
         $payload = $this -> encodePostBody($postBody);
